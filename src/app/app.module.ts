@@ -13,6 +13,7 @@ import localeFrCA from '@angular/common/locales/fr-CA';
 import { registerLocaleData } from '@angular/common';
 
 
+
 registerLocaleData( localeEsCO );
 registerLocaleData( localeFrCA );
 
@@ -33,6 +34,7 @@ registerLocaleData( localeFrCA );
         AppRoutingModule,
         BrowserAnimationsModule,
         SharedModule,
+
 
     ]
 })
