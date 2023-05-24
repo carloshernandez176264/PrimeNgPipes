@@ -18,11 +18,17 @@
   <div class="p-toolbar-group-end">
 
 
-      <p-button class="mr-2"  label="Por Nombre" icon="pi pi-sort" styleClass="p-button-success mr-2"></p-button>
+      <p-button class="mr-2"
+      (onClick)="changeOrder('name')"
+      label="Por Nombre" icon="pi pi-sort" styleClass="p-button-success mr-2"></p-button>
 
-      <p-button class="mr-2" label="Por volar"  icon="pi pi-sort" styleClass="p-button-danger"></p-button>
+      <p-button class="mr-2"
+      (onClick)="changeOrder('canFly')"
+      label="Por volar"  icon="pi pi-sort" styleClass="p-button-danger"></p-button>
 
-      <p-button class="mr-2" label="Por color"  icon="pi pi-sort" styleClass="p-button-help"></p-button>
+      <p-button class="mr-2"
+      (onClick)="changeOrder('color')"
+      label="Por color"  icon="pi pi-sort" styleClass="p-button-help"></p-button>
 
 
 
@@ -35,22 +41,19 @@
 <div class="grid">
     <div class="col mt-2">
       <p-panel header="Heroes">
-
-
-
-      <p-table [value]="heroes" [tableStyle]="{ 'min-width': '50rem' }">
+       <p-table [value]="heroes | sortBy:orderBy" [tableStyle]="{ 'min-width': '50rem' }">
         <ng-template pTemplate="header">
-      <tr>
+        <tr>
           <th>Nombre</th>
           <th>Vuela</th>
           <th>Color</th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-product>
+    <ng-template pTemplate="body" let-hero>
       <tr>
-          <td>{{ product.name }}</td>
-          <td>{{ product.canFly | canFly |titlecase }}</td>
-          <td>{{ product.color }}</td>
+          <td>{{ hero.name }}</td>
+          <td>{{ hero.canFly | canFly |titlecase }}</td>
+          <td>{{ hero.color }}</td>
 
       </tr>
   </ng-template>

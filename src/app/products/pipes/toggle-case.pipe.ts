@@ -9,7 +9,7 @@ export class ToggleCasePipe implements PipeTransform {
   //transform(value: any, ...args: any[]): any {
 
     transform(value: string ,toUpper:boolean= false): string {
-      console.log({value, toUpper});
+
 
       return (toUpper)
       ? value.toUpperCase()
